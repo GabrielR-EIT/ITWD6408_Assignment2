@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  min-height: 20vh;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#advanced-main {
+  flex-direction: column;
+}
+
+#navbar {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#statement {
+  background: linear-gradient(0deg, rgba(41,119,45,1) 0%, rgba(88,215,93,1) 62%, rgba(157,251,161,1) 100%);
+  border: 3px solid rgb(41,119,45);
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+}
+
+/*--- Internal menu ---*/
+#internal-menu-area {
+	background: linear-gradient(0deg, rgb(172, 23, 23) 0%, rgb(209, 44, 44) 62%,rgb(247, 65, 65) 100%);
+  border: 3px solid rgb(172, 23, 23);
+  max-width: 100%;
+  padding: 0 2vh;
+	
+	/*Make this area become a flexbox container*/
+	display: flex;
+  align-items: center;
+  justify-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.internal-menu-box {
+  display: inherit;
+  margin: 2vh 0;
+}
+
+/*--- Demo Area ---*/
+#demo-area {
+  display: inherit;
+  flex-direction: column;
+  width: 100%;
+  margin: 2vh;
+}
+
+.demo-box {
+  display: none;
+}
+
+.demo-button {
+	background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+	width: 20vh;
+  height: 10vh;
+  color: black;
+	text-align: center;
+	text-decoration: none;	
+	font-size: 100%;
+}
+
+.demo-button:hover {
+	background: linear-gradient(0deg, rgb(25, 25, 25) 0%, rgb(44, 44, 44) 62%,rgb(61, 61, 61) 100%);
+  color: white;
+  cursor: pointer;	
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.booking-row {
+  display: flex;
+  width: 100%;
+  padding: 6vh 12vh;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#dueInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#totalsInfo {
+  display: inherit;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.demo-row {
+  display: flex;
+  width: 100%;
+  padding: 2vh;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.demo-row * {
+  margin: 0 0.75vh;
+}
+
+main .row section, main .row div {
+  width: 100%;
+}
+
+h1 {
+  color: red;
+  background-color: grey;
+  padding: 50px;
+  text-align: center;
+  border: solid green 2px;
+}
+
+h2 {
+  background-color: gray;
+  text-align: center;
+  border: solid 2px green;
+  padding: 50px;
+  color: red;
+}
+
+h2:hover {
+  background-color: yellow;
+}
+
+#content {
+  border: solid black 2px;
+  width: 500px;
+  height: 15vh;
+  text-align: center;
+  background-color: yellow;
+}
+
+input {
+  padding: 0.25vh 1.5vh;  
+}
+
+#form-buttons {
+  text-align: center;
+}
+
+#form-buttons div {
+  margin: 2vh 1.2vh;
+}
+
+#box {
+  background-color: purple;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.question-style {
+  background-color: yellow;
+}
+  
+/*--- Drag and Drop ---*/
+.drag-area {
+  width: 450px;
+  height: 450px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-left: 30px;
+  border: 1px solid black;
+}
+
+.drop-area {
+  position: absolute;
+  margin: 0 auto;
+  color: blue;
+  bottom: 10px;
+  left: 20px;
+}
+
+.box {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background: green;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  border:2px solid #512DA8;
+}
+
+.result {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 1.2vh 0;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (min-width: 768px) {/*when the viewport is 768px or larger => Set those styles for Tablet or PC*/
+  main .row section, main .row div {
+    width: auto;
+  }
+  
+  #advanced-main {
+    flex-direction: row;
+  }
+
+  .row {
+    flex-direction: row;
+  }
+
+  /*--- Internal menu ---*/
+  #internal-menu-area {
+  max-width: 25%;
+	flex-direction: column;
+  }
+
+  .internal-menu-box {
+    margin: 2vh 0;
+  }
+
+  /*--- Demo Area ---*/
+  #demo-area {
+  max-width: 75%;
+  margin: 2vh 0;
+  padding: 0 2vh;
+  }
+}
