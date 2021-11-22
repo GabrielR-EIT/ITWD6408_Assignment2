@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML/JSON</title>
+    <!--Insert Bootstrap files-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+
+      <!-- The overlay -->
+      <div id="navBar">
+        <header>
+            <img src="media/globe-earth-symbol.png" style="width:100px;height:100px;">
+            <h1>ITWD6.408</h1>
+        </header>
+
+        <ul id="navBar-Links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="forms.html">FORMS</a></li>
+            <li><a class="active">XML/JSON</a></li>
+            <li><a href="javascript.html">JAVASCRIPT</a></li>
+            <li><a href="research.html">RESEARCH</a></li>
+        </ul>
+
+        <div>
+            <div id="navBar-Controls">
+                <a href="javascript:void(0)"><img src="media/Magnifying_glass_icon.png" style="width:75px;height:75px;"></a>
+                <!-- Use any element to open/show the overlay navigation menu -->
+                <a href="javascript:void(0)"><img src="media/5411924.png" style="width:100px; height:100px;" onclick="toggleNav()"></a>
+              </div>
+
+            <div id="dropDown-Box">           
+                <!-- Overlay content -->
+                <ul id="dropDown-Content">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="forms.html">FORMS</a></li>
+                    <li><a class="active">XML/JSON</a></li>
+                    <li><a href="javascript.html">JAVASCRIPT</a></li>
+                    <li><a href="research.html">RESEARCH</a></li>
+                </ul>
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>        
+            </div>
+        </div>
+      </div>
+
+      <header id="xml-area">
+          <h1>USE XMLHttpRequest object to load XML file from server</h1>
+          <button onclick="loadXML()">Load XML file</button>
+          <p id="contact"></p>
+      </header>
+
+      <hr>
+
+       <!--Header section-->
+      <header id="json-area">
+        <h1>JSON AND AJAX DEMONSTRATION: Load JSON File Stored on Web Server</h1>
+        <div class="json-link">
+          <h2>View JSON File at <a href="http://danieldangs.com/itwd6-408/json/contact-eit.json">http://danieldangs.com/itwd6-408/json/contact-eit.json</a></h2>
+          <button onclick="loadJSONContact()">Load JSON File</button>
+        </div>
+        <div class="json-link">
+          <h2>View JSON File at <a href="http://danieldangs.com/itwd6-408/json/fruit.json">http://danieldangs.com/itwd6-408/json/fruit.json</a></h2>
+          <button onclick="loadJSONFruit()">Load JSON File</button>
+        </div>
+        <div class="json-link">
+          <h2>View JSON File at <a href="http://danieldangs.com/itwd6-408/json/faqs.json">http://danieldangs.com/itwd6-408/json/faqs.json</a></h2>
+          <button onclick="loadJSONFAQ()">Load JSON File</button>
+        </div>
+
+      <!--Content section-->
+        <div id="json-data"></div>
+      </header>
+
+      <footer>
+        <p>
+            <img src="https://media-exp1.licdn.com/dms/image/C560BAQFu93Wt7371Bw/company-logo_200_200/0/1582101448497?e=2159024400&v=beta&t=WF-salNtHttVJWOg2Pifz8ajQFP7buDk1K6fSJ92zSg">
+            <img src="https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc">
+            <img src="https://www.net-aware.org.uk/siteassets/images-and-icons/application-icons/app-icons-twitter.png?w=585&scale=down">
+            <img src="https://www.facebook.com/images/fb_icon_325x325.png">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png">
+        </p>
+        <p>&copy; 2021 Gabriel Robinson</p>
+        <p><a href="#">Privacy Policy</a></p>
+      </footer>
+
+      <script type="text/javascript" src="js/js.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,665 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+body {
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  border: rgb(220, 220, 220);
+}
+
+hr {
+  background-color: grey;
+  height: 2px;
+}
+
+/*--- Navigation Bar ---*/
+#navBar {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /*fixed: Stay in place */
+  z-index: 1; /* Sit on top */
+  background: linear-gradient(0deg, rgba(41,119,45,1) 0%, rgba(88,215,93,1) 62%, rgba(157,251,161,1) 100%);
+  border: 3px solid rgb(41,119,45);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: hidden;
+  transition: 0.4s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+#navBar header { 
+  display: flex;
+  justify-items: left;
+  align-items: center;
+}
+
+#navBar-Controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#navBar-Controls img:hover:not(.active) {
+  filter: invert(100%);
+  transition: 0.2s;
+}
+
+/* Position the content inside the overlay */
+#dropDown-Box {
+  background: rgb(105, 105, 105) 0%;
+  background: linear-gradient(0deg, rgb(105, 105, 105) 0%, rgb(160, 160, 160) 62%, rgb(224, 224, 224) 100%);
+  border: 3px solid rgb(105, 105, 105) 0%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  visibility: hidden;
+  top: 12.1%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  height: 0%;
+  transition: 0.4s;
+  float: right;
+  text-align: center; /* Centered text/links */
+}
+
+/* The navigation links inside the overlay */
+#navBar-Links {
+  display: none;
+}
+
+#navBar-Links a {
+  font-size: 2em;
+  color: black;
+  /* transition: 0.2s; */ /* Transition effects on hover (color) */
+}
+
+#dropDown-Content {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+#dropDown-Content li {
+  padding: 1.75vh 0;
+  font-size: 2em;
+  color: black;
+  /* transition: 0.2s; */ /* Transition effects on hover (color) */
+}
+
+#dropDown-Content a {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+/* When you mouse over the navigation links, change their color */
+#navBar a:hover:not(.active), #navBar a:focus {
+  color: #f1f1f1;
+  /* transition: 0.2s; */
+}
+
+/* Position the close button (top right corner) */
+#navBar .closebtn {
+  color: red;
+  font-size: 60px;
+  top: 15px;
+  right: 35px;
+}
+
+#navBar .active {
+  background-color: rgba(247, 247, 47, 0.8);
+}
+
+/*--- Internal menu ---*/
+#internal-menu-area {
+	background: linear-gradient(0deg, rgb(172, 23, 23) 0%, rgb(209, 44, 44) 62%,rgb(247, 65, 65) 100%);
+  border: 3px solid rgb(172, 23, 23);
+  top: 12%; /* 25% from the top */
+  min-width: 25vh;
+  max-width: 25%; /* 100% width */
+  z-index: 2;
+  float: left;
+  position: fixed;
+	
+	/*Make this area become a flexbox container*/
+	display: flex;
+	flex-direction: column;
+}
+
+.internal-menu-row {
+	min-height: 5vh;
+	background: linear-gradient(0deg, rgb(58, 95, 27) 0%, rgb(93, 148, 48) 62%, rgb(114, 172, 67) 100%);
+	border: solid 1px rgb(58, 95, 27);
+  padding: 1.5vh;	
+  min-height: 10vh;
+	
+	/*Make this area become a flexbox container*/
+	display: inherit;
+	flex-direction: column;	
+}
+
+.internal-menu-row-box {
+	flex: 1;
+  display: inherit;
+  justify-content: center;
+  margin: 0 1.5vh;
+}
+
+.demo-button {
+	width: 100%;
+	height: 100%;	
+	background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+	color: black;
+	
+	text-align: center;
+	text-decoration: none;	
+	font-size: 1em;
+	cursor: pointer;	
+}
+
+section, .row {
+  display: flex;
+  flex-direction: column;
+}
+
+article {
+  padding: 2.5%;
+  flex-direction: column;
+}
+
+#slideshow h2, #productArea h1, #productArea #comments h2, #productArea #addComment h2 {
+  filter: drop-shadow(0 2px 0.75px rgb(129, 129, 129));
+}
+
+em:not(#reference-list *) {
+  font-style: normal;
+  color: blue;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #f1f1f1;
+  border: 3px solid rgb(0, 0, 0);
+  background: rgb(0, 0, 0);
+  background-image: url(../media/Visual-Studio-Code-Vs-Community.jpg);
+  background-size: cover;
+}
+
+#bannerText {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  border: 3px solid #f1f1f1;
+  margin: 8% 18%;
+}
+
+#bio {
+  background: rgb(216, 213, 36);
+  background: linear-gradient(0deg, rgb(216, 213, 36) 0%, rgb(230, 227, 57) 62%, rgb(253, 251, 95) 100%);
+  border: 3px solid rgb(216, 213, 36);
+  width: 100%;
+}
+
+#technologies {
+  background: rgb(190, 49, 49) 0%;
+  background: linear-gradient(0deg, rgb(190, 49, 49) 0%, rgb(212, 62, 62) 62%, rgb(250, 98, 98) 100%);
+  border: 3px solid rgb(190, 49, 49);
+  width: 100%;
+}
+
+#competencies {
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(41,119,45,1) 0%;
+  background: linear-gradient(0deg, rgba(41,119,45,1) 0%, rgba(88,215,93,1) 62%, rgba(157,251,161,1) 100%);
+  border: 3px solid rgb(41,119,45);
+}
+
+#statement {
+  background: rgb(216, 132, 36);
+  background: linear-gradient(0deg, rgb(216, 132, 36) 0%, rgb(233, 150, 55) 62%, rgb(250, 163, 63) 100%);
+  border: 3px solid rgb(216, 132, 36);
+}
+
+/*--- Forms Page ---*/
+#mobile-form, #google-form {
+  max-width: 60%;
+  margin: 2.5vh auto;
+  padding: 2.5vh;
+  background:linear-gradient(0deg, #2e90ad 0%, #41accc 62%,#50bfe0 100%);
+  border: 3px solid #2e90ad;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*--- XML/JSON Page ---*/
+#xml-area, #json-area {
+  margin: 2vh auto;
+  max-width: 60%;
+}
+
+#xml-area *, #json-area * {
+  margin: 1.25vh auto;
+}
+
+#json-data * {
+  padding: 0 2vh;
+}
+
+/*--- Research Page ---*/
+#research {
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  border: 3px solid rgb(220, 220, 220);
+}
+
+#references {
+  flex-direction: column;
+  background: linear-gradient(0deg, rgb(218, 212, 205) 0%, rgb(236, 211, 181) 62%, rgb(255, 234, 208) 100%);
+  border: 3px solid rgb(204, 175, 139);
+}
+
+#references * {
+  margin: 1.5vh 0;
+  padding: 0 1.5vh;
+}
+
+/*-- Flip boxes --*/
+#flipBoxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#flipBoxes .row {
+  display: flex;
+  flex-direction: column;
+}
+
+.flipBox {
+	background-color: transparent;
+	width: 40vh;
+	height: 30vh;
+  margin: 2vh;
+	perspective: 1000px;
+}
+
+.flipBoxInner {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	border: medium solid skyblue;
+	transition: transform 0.65s;
+	transform-style: preserve-3d;
+}
+
+.flipBoxInner p {
+  font-size: 1.8vh;
+}
+
+.flipBoxFront {
+	position: absolute;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+  color: blue;
+	background-color: lightblue;
+}
+
+.flipBoxBack {
+	position: absolute;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+    background-color: #FFFFF0;
+    color: #010204;
+    transform: rotateX(180deg);	
+}
+
+.flipBoxFront h3 {
+	margin-bottom: 5px;
+}
+
+.flipBoxFront img {
+	margin: auto;	
+	border-radius: 50%;
+	width: 55%;
+  border: medium solid #000000;
+}
+
+.flipBoxBack p {
+	text-align: left;
+}
+
+.flipBox:hover .flipBoxInner {
+	transform: rotateX(180deg);
+}
+
+/*-- Research Flip Boxes --*/
+#research .flipBoxInner {
+  border: medium solid orange;
+}
+
+#research .flipBoxInner p {
+  font-size: 1.2vh;
+}
+
+#research .flipBoxFront {
+  background-color: bisque;
+  color: black;
+}
+
+#research .flipBoxFront img {
+  border: none;
+	border-radius: 0%;
+  width: 75%;
+}
+
+/*--- Slideshow ---*/
+#slideshow {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 2vh 0;
+  background: rgb(216, 132, 36);
+  background: linear-gradient(0deg, rgb(216, 132, 36) 0%, rgb(233, 150, 55) 62%, rgb(250, 163, 63) 100%);
+  border: 3px solid rgb(216, 132, 36);
+}
+
+/* Slideshow container */
+#slideshow-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  margin: 0 -5vh;
+  margin-top: -22px;
+  padding: 5%;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.mySlides img, .product-box img {
+  width: 300px;
+}
+
+/* Caption text */
+#slideshow p {
+  color: #f2f2f2;
+  text-shadow: 0 2px #000000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 2vh 2vh;
+  background-color: rgb(250, 250, 250);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active, .dot:hover {
+  background-color: #3a6eb3;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+#slideshow .row, #slideshow .row * {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+#slideshow button {
+  width: 20vh;
+  margin: auto;
+}
+
+#slideshow .active {
+  background-color: #3a6eb3;
+}
+
+#customization {
+  padding: 6vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid rgb(90, 90, 90);
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+}
+
+#customization .row, #customization .row * {
+  display: inherit;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.75vh;
+}
+
+/*--- Online Shop ---*/
+#onlineShop, #onlineShop * {
+  align-items: center;
+  flex-direction: column;
+  padding: 1.25vh;
+}
+
+#onlineShop {
+  background:linear-gradient(0deg, #295b9b 0%, #427cc9 62%,#619deb 100%);
+}
+
+#onlineShop form {
+  display: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  border: 3px solid rgb(129, 129, 129);
+  margin: 1.25vh 0;
+}
+
+#onlineShop form input {
+  align-self: center;
+  min-width: 45%;
+  padding: 0.65vh;
+}
+
+/*--- Product Area ---*/
+#productArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding: 2vh 0;
+  background: linear-gradient(0deg, rgb(98, 27, 163) 0%, rgb(122, 44, 194) 62%, rgb(144, 58, 224) 100%);
+  border: 3px solid rgb(98, 27, 163);
+}
+
+#productArea div {
+  width: 60%;
+  margin: 2vh 0;
+}
+
+#productArea .product-box {
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  border: 3px solid rgb(129, 129, 129);
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#productArea .product-title {
+  text-align: center;
+}
+
+#productArea .product-box .product-img {
+  align-self: center;
+  box-shadow: 0 3px 6px rgb(129, 129, 129);
+}
+
+#productArea .comment {
+  padding: 2.25vh;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  margin: 2.25vh 0;
+}
+
+#productArea .comment * {
+  margin: 0 0.5vh;
+}
+
+#productArea .addCommentForm {
+  background: linear-gradient(0deg, rgb(220, 220, 220) 0%, rgb(235, 235, 235) 62%,rgb(250, 250, 250) 100%);
+  border: 3px solid rgb(129, 129, 129);
+  padding: 2vh;
+}
+
+#productArea .addCommentForm .userName {
+  width: 50%;
+}
+
+#productArea .addCommentForm .commentBox {
+  margin: none;
+  width: 100%;
+  height: 25vh;
+}
+
+#productArea .addCommentForm * {
+  margin: 1.25vh 0.5vh;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (min-width: 768px) {/*when the viewport is 768px or larger => Set those styles for Tablet or PC*/
+  #navBar-Links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 60%;
+  }
+
+  #internal-menu-area {
+    min-width: 37.5vh;	
+  }
+
+  .internal-menu-row {
+    flex-direction: row;	
+  }
+
+  section:not(.container), #flipBoxes .row, .form-group {
+    flex-direction: row;
+  }  
+  
+  #bio {
+      background: rgb(216, 213, 36);
+      background: linear-gradient(0deg, rgb(216, 213, 36) 0%, rgb(230, 227, 57) 62%, rgb(253, 251, 95) 100%);
+      border: 3px solid rgb(216, 213, 36);
+      width: 50%;
+    }
+    
+    #technologies {
+      background: rgb(190, 49, 49) 0%;
+      background: linear-gradient(0deg, rgb(190, 49, 49) 0%, rgb(212, 62, 62) 62%, rgb(250, 98, 98) 100%);
+      border: 3px solid rgb(190, 49, 49);
+      width: 50%;
+    }
+  }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(41,119,45,1) 0%, rgba(88,215,93,1) 62%, rgba(157,251,161,1) 100%);
+  border: 3px solid rgb(41,119,45);
+  height: 20%;
+  width: 100%;
+}
+
+footer img {
+  height: 5vh;
+  width: 5vh;
+  margin: 0.75vh 1vh;
+}
+
+footer p {
+  margin: 0.75vh 0;
+}
