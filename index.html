@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+        <!--Insert jQuery Library Here-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- The overlay -->
+        <header class="row bg-dark text-white">
+            <!--Title area-->
+            <div class="col-12 col-lg-8 bg-primary border border-dark text-center text-white display-4"><h1>Phone Fix Booking System</h1>
+            </div>
+            <!--Menu area-->
+            <div class="col-12 col-lg-4 bg-dark border border-dark">
+                <div id="navbar">
+                    <!--Button 1-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0 bg-info border border-dark text-center text-white"><a class="active">HOME</a>
+                    </div>
+                    <!--Button 2-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0 bg-info border border-dark text-center text-white"><a href="advanced.html">ADVANCED</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <h2>jQuery Demo: Form validation</h2>	
+
+            <form id="customerForm">
+                <div class="row">
+                    <section id="customerDetails" class="bg-warning">
+                        <h2>Customer Details</h2>
+                        <div class="col-md">
+                            <fieldset class="border p-2">
+                                <legend class='w-20'>Customer type *</legend>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="consumerBox" checked>
+                                        <label class="form-check-label" for="consumerBox">
+                                        Consumer
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gridRadios" id="businessBox">
+                                        <label class="form-check-label" for="businessBox">
+                                        Business
+                                        </label>
+                                    </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputTitle" class="col-sm-2 col-form-label">Title: *</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="inputTitle" required>
+                                    <option selected>Mr</option>
+                                    <option>Mrs</option>
+                                    <option>Ms</option>
+                                    <option>Miss</option>
+                                    <option>Dr</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputFirstName" class="col-sm-2 col-form-label">First Name *:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputFirstName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputLastName" class="col-sm-2 col-form-label">Last Name *:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputLastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputStreet" class="col-sm-2 col-form-label">Street *:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputStreet" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputSuburb" class="col-sm-2 col-form-label">Suburb:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputSuburb">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputCity" class="col-sm-2 col-form-label">City *:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCity" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPostCode" class="col-sm-2 col-form-label">Post Code:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPostCode" minlength="4" maxlength="4">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputPhoneNo" class="col-sm-2 col-form-label">Phone Number *:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputPhoneNo" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputEmail" class="col-sm-2 col-form-label">Email *:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail" required>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="repairDetails" class="bg-light">
+                        <fieldset>
+                            <h2>Repair Details</h2>
+                            <div class="form-group row">
+                                <label for="inputPurcDate" class="col-sm-2 col-form-label">Purchase Date *:</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="inputPurcDate" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputRepDate" class="col-sm-2 col-form-label">Repair Date *:</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="inputRepDate" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md">
+                                <fieldset class="border p-2">
+                                    <legend class='w-20'>Under Warranty</legend>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="warranty">
+                                            <label class="form-check-label mr-5" for="warranty">Warranty</label>
+                                        </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputIMEI" class="col-sm-2 col-form-label">IMEI Number *:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputIMEI" maxlength="15" maxlength="15" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputMake" class="col-sm-2 col-form-label">Make: *</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="inputMake" required>
+                                        <option selected>Apple</option>
+                                        <option>LG</option>
+                                        <option>Motorola</option>
+                                        <option>Nokia</option>
+                                        <option>Samsung</option>
+                                        <option>Sony</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputModelNo" class="col-sm-2 col-form-label">Model Number:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputModelNo">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputFault" class="col-sm-2 col-form-label">Fault Category: *</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" id="inputFault" required>
+                                        <option selected>Battery</option>
+                                        <option>Charging</option>
+                                        <option>Screen</option>
+                                        <option>SD-storage</option>
+                                        <option>Software</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputDesc" class="col-sm-2 col-form-label">Description *:</label>
+                                    <div class="col-sm-10">
+                                        <input type="textarea" class="form-control" id="inputDesc" rows="5">
+                                    </div>
+                            </div>
+                        </fieldset>
+                    </section>
+
+                    <section id="Courtesy Phone / Cost">
+                        <fieldset>
+                            <section id="Courtesy Phone" class="bg-info">
+                                <h2>Courtesy Phone</h2>
+                                <div class="form-group row">
+                                    <label for="itemType" class="col-sm-2 col-form-label">Item Type:</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="itemType" required>
+                                            <option value="iPhone" selected>iPhone 7</option>
+                                            <option value="samsung">Samsung A6+</option>
+                                            <option value="galaxy">Galaxy Z</option>
+                                            <option value="charger">Charger</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="float-left">
+                                        <button id="addItemBtn" class="btn btn-white" type="button">Add Item</button>
+                                    </div>
+                                </div>
+
+                                <table id="itemTable" class="table table-bordered">
+                                    <tr id="table-header">
+                                        <th style="border: 1px solid black; width: 100px" scope="col">Item</th>
+                                        <th style="border: 1px solid black; width: 100px" scope="col">Cost</th>
+                                        <th style="border: 1px solid black; width: 100px" scope="col">Action</th>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </section>
+                        <section id="Cost" class="bg-danger">
+                            <h2>Cost</h2>
+
+                            <div class="form-group row">
+                                <label for="bondAmount" class="col-sm-2 col-form-label">Bond:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="bondAmount" type="text" value="$0" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="serviceFee" class="col-sm-2 col-form-label">Service Fee:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="serviceFee" type="text" value="$85" readonly>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="totalAmount" class="col-sm-2 col-form-label">Total:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="totalAmount">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="gstAmount" class="col-sm-2 col-form-label">GST:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="gstAmount">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="totalGST" class="col-sm-2 col-form-label">Total (+GST):</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="totalGST">
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+                <div id="form-buttons" class="row bg-danger">
+                        <div class="float-left">
+                            <button id="btnReset" class="btn btn-white" type="reset">Reset</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-white" type="submit">Submit</button>
+                        </div>
+                        <div>
+                            <button id="faqBtn" class="btn btn-white">FAQ</button>
+                        </div>
+                </div>
+            </form>
+        </main>
+
+        <footer class="bg-dark text-white">
+            <p>Advanced Web Design, Copyright &copy; Gabriel Robinson - 2021</p>
+        </footer>
+
+        <script type="text/javascript" src="js/js.js" onload="init()"></script>
+
+    </body>
+</html>

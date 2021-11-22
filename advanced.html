@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/css.css">
+        <!--Insert jQuery Library Here-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- The overlay -->
+        <header class="row bg-dark text-white">
+            <!--Title area-->
+            <div class="col-12 col-lg-8 bg-primary border border-dark text-center text-white display-4"><h1>Phone Fix Booking System</h1>
+            </div>
+            <!--Menu area-->
+            <div class="col-12 col-lg-4 bg-dark border border-dark btn-group">
+                <div id="navbar">
+                    <!--Button 1-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0 bg-info border border-dark text-center text-white btn"><a href="index.html">HOME</a>
+                    </div>
+                    <!--Button 2-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 p-0 m-0 bg-info border border-dark text-center text-white btn"><a class="active">ADVANCED</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <banner id="statement">
+            <p>
+                <strong> Statement of authenticity </strong> <br>
+                I confirm that: <br>
+                &bull; This is an original assessment and is entirely my own work. <br>
+                &bull; It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text. <br>
+                &bull; No material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.  
+            </p>
+        </banner>
+
+        <main id="advanced-main">
+            <div id="internal-menu-area" class="btn-group btn-group-vertical pull-left">	
+                <div class="internal-menu-box">
+                    <button class="btn-centered demo-button" onclick="showDemo(0)" type="button">Demo 1<br>(Events / Animations)</button>
+                </div>
+                <div class="internal-menu-box">
+                    <button class="btn-centered demo-button" onclick="showDemo(1)" type="button">Demo 2<br>(Set Background Colour)</button>
+                </div>
+                <div class="internal-menu-box">
+                    <button class="btn-centered demo-button" onclick="showDemo(2)" type="button">Demo 3<br>(Load JSON File)</button>
+                </div>
+                <div class="internal-menu-box">
+                    <button class="btn-centered demo-button" onclick="showDemo(3)" type="button">Demo 4<br>(Drag and Drop Items)</button>
+                </div>
+                <div class="internal-menu-box">
+                    <button class="btn-centered demo-button" onclick="showDemo(4)" type="button">Demo 5<br>()</button>
+                </div>
+            </div>
+
+            <div id="demo-area" class="pull-right">
+                <h1>Welcome to ITWD6.408: jQuery Demo</h1>
+                <section class="demo-box">
+                    <h2>Demo 1: Use jQuery to Handle Events</h2>
+                    <p id="content">jQuery Makes Our Life Easier</p>
+                    <button id="btn1" class="btn">Hide</button>
+                    <button id="btn2" class="btn">Show</button>
+                    <button id="btn3" class="btn">Toggle Hide/Show</button>
+                    <br>
+                    <button id="btn4" class="btn">Fade In</button>
+                    <button id="btn5" class="btn">Fade Out</button>
+                    <br>
+                    <button id="btn6" class="btn">Slide Up</button>
+                    <button id="btn7" class="btn">Slide Down</button>
+                    <br>
+                    <button id="btn8" class="btn">Multiple Effects</button>
+
+                    <hr>
+
+                    <h2>Use jQuery to Add Animation to HTML Element</h2>
+                    <button id="btn9" class="btn">Move Right</button>
+                    <button id="btn10" class="btn">Move Left</button>
+                    <button id="btn11" class="btn">Move Around</button>
+                    
+                    <br><br>
+
+                    <div id="box" class="btn-group"></div>
+                </section>
+
+                <section class="demo-box">
+                    <h2>Demo 2: Use jQuery to Set the background color:</h3>
+                    <label>Select color</label>
+                    <select id="colorOption" onchange="changeColor()">
+                        <option value="" selected></option>
+                        <option value="red">RED</option>
+                        <option value="green">GREEN</option>
+                        <option value="blue">BLUE</option>
+                    </select>
+                </section>
+
+                <section class="demo-box">
+                    <h2>Demo 3: Use jQuery AJAX method to load JSON file stored on server</h2>
+                    <div class="demo-row">
+                        <input type="text" id="searchInput">
+                        <input type="button" value="Search" id="searchBtn">
+                    </div>
+                    <div id="questions"></div>
+                </section>
+
+                        <!--Drag Area Box 1: Available Courtesy Phones-->
+                <section class="demo-box">
+                    <h2>Demo 4: Use jQuery to Drag and drop items</h2>
+                    <div class="drag-area">
+                        <div class="drop-area">Available Courtesy Phones</div>
+                        <div class="box">iPhone</div>
+                        <div class="box">Samsung A6+</div>
+                        <div class="box">Galaxy Z</div>
+                        <div class="box">Charger</div>
+                    </div>
+                    
+                    <!--Drag Area Box 2: Your Choice-->
+                    <div class="drag-area">
+                        <div class="drop-area">Your Selection</div>
+                    </div>
+                    
+                    <!--Display the outcome-->
+                    <div class="result">-</div>
+                </section>
+
+                <section class="demo-box">
+                    <h2>Demo 5: ?</h2>
+                    <div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white">
+            <p>Advanced Web Design, Copyright &copy; Gabriel Robinson - 2021</p>
+        </footer>
+
+        <script type="text/javascript" src="js/js.js"></script>
+
+    </body>
+</html>
